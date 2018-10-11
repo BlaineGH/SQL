@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wall</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+	    	{% if messages %}
+	  			{% for messagecopy in messages %}
+	        		<p>{{messagecopy}}</p>
+	      		{% endfor %}
+	    	{% endif %}
+	  	{% endwith %}
+	<form action='/post' method='post'>
+		<label>Post a message</label>
+		<input type="textarea" name='msg'>
+		<input type="submit" value='Post'>
+	</form>
+	{% for msg in all_msg: %}
+   		<p>{{ session['name'] }} - {{msg['created_at']}}</p>
+   		<p>{{ msg['msg'] }}</p>
+   	{% endfor %}
+   	<form action='/comment' method='post'>
+		   	<label>MAke a comments:</label>
+		   	<input type="textarea" name="cmt">
+		   	<input type="submit" value='Post'>
+	   </form>
+  	<hr>
+</body>
+</html>

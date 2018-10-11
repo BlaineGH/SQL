@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show</title>
+</head>
+<body>
+	<div>
+		<div>
+			<h1>User {{userid}}</h1>
+			<p>Full Name: {{first_name}} {{last_name}}</p>
+			<p>Email: {{email}}</p>
+			<p>Created at: {{created_at}}</p>
+			<p><a href="{% url 'edit' id=userid %}">Edit</a> | <a href="{% url 'delete' id=userid %}">Delete</a></p>
+			<a href="{% url 'goback' %}">Go Back</a>
+		</div>
+	</div>
+</body>
+</html>

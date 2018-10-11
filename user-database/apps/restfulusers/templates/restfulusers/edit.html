@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit</title>
+</head>
+<body>
+	<div>
+		<div>
+			<h1>Edit User {{userid}}</h1>
+			<form action='/update/{{userid}}' method="POST">
+				{% csrf_token %}
+				<label>First Name:</label>
+				<input type="text" name="first_name">
+				<label>Last Name:</label>
+				<input type="text" name="last_name">
+				<label>Email:</label>
+				<input type="text" name="email">
+				<input type="submit" value="Update">
+			</form>
+			<button action='/goback'>Go Back</button>
+		</div>
+	</div>
+
+</body>
+</html>

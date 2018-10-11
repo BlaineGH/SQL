@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+</head>
+<body>
+	<div>
+		<div class='table'>
+			<h1>Users</h1>
+			<table>
+				<th>
+					<td>id</td>
+					<td>Full Name</td>
+					<td>Email</td>
+					<td>Created at</td>
+					<td>Actions</td>
+				</th>
+				<tbody>
+					{% for user in users %}
+					<th>
+						<td>{{user.id}}</td>
+						<td>{{user.firstname}} {{user.lastname}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.created_at}}</td>
+						<td><a href="{% url 'show' id=user.id %}">Show</a><a href="{% url 'edit' id=user.id %}">Edit</a><a href="{% url 'delete' id=user.id %}">Delete</a></td>
+					</th>
+					{% endfor %}
+				</tbody>
+			</table>
+			<a href="{% url 'new' %}">Create new</a>
+		</div>
+	</div>
+</body>
+</html>
